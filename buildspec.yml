@@ -10,7 +10,7 @@ proxy:
 phases:
   install:
     runtime-versions:
-      nodejs: 12
+      nodejs: 16
   build:
     commands:
       - npm install && npm run build
