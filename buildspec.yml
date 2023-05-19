@@ -14,4 +14,4 @@ phases:
   build:
     commands:
       - npm install && npm run build
-      - cd ../cdk && npm install && npm run build && npm run cdk synth && npm run deploy
+      - cd cdk && npm install && npm run build && npm run cdk synth && npm run deploy
