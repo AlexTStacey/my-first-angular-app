@@ -15,3 +15,6 @@ phases:
     commands:
       - npm install && npm run build
       - cd cdk && npm install && npm run build && npm run cdk synth && npm run deploy
+  post_build:
+    commands:
+      - aws cloudformation describe-stacks --region eu-west-2 CdkStack ---query 'Stacks[0].Outputs[?OutputKey==`quotesApiUrl`].OutputValue' --output text

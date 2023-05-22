@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+const AWS = require('aws-sdk');
   
 @Injectable({
   providedIn: 'root'
 })
 export class GetQuotesService {
-  private url = 'https://svg3dximc5.execute-api.eu-west-2.amazonaws.com/prod/quotes';
-   
-  constructor(private httpClient: HttpClient) { }
+
+  private url = "";
+    
+  constructor(private httpClient: HttpClient) { };
   
   getQuotes(){
     return this.httpClient.get(this.url);

@@ -77,7 +77,8 @@ export class CdkStack extends cdk.Stack {
 
     new cdk.CfnOutput(this, 'API Endpoint', {
       description: 'API Endpoint',
-      value: api.url
+      value: api.url,
+      exportName: "quotesApiUrl"
     });
 
     new TableViewer(this, 'tableviewer', {
