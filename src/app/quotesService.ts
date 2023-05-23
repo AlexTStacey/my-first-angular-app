@@ -28,9 +28,8 @@ export class GetQuotesService {
   }
 
   fetchApitUrlFromStack(){
-    const  cloudformation = new AWS.CloudFormation();
+    const  cloudformation = new AWS.CloudFormation({region: 'eu-west-2'});
     let quotesApiUrl = "";
-
     cloudformation.describeStacks({StackName: 'CdkStack'}, (err, data) => {
       if (err){
         console.error("Failed to retrive stack outputs - " + err);
