@@ -20,4 +20,4 @@ phases:
       - cd .. && ng build
   post_build:
     commands:
-      - cd cdk && cdk deploy
+      - cd cdk && npm run deploy
